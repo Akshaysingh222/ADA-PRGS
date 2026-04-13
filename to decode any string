@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    string text;
+    int key;
+
+    cout << "Enter encoded string: ";
+    getline(cin, text);
+
+    cout << "Enter key (shift value): ";
+    cin >> key;
+
+    for(int i = 0; i < text.length(); i++) {
+        if(isalpha(text[i])) {
+            char base = islower(text[i]) ? 'a' : 'A';
+            text[i] = (text[i] - base - key + 26) % 26 + base;
+        }
+    }
+
+    cout << "Decoded string: " << text;
+
+    return 0;
+}
+
+
+
+
+########################
+OUTPUT
+Enter encoded string: akshay
+Enter key (shift value): 3
+Decoded string: xhpexv
