@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    long long factorial = 1;
+
+    cout << "Enter a number: ";
+    cin >> n;
+
+    if(n < 0) {
+        cout << "Factorial of negative number is not defined.";
+    } else {
+        for(int i = 1; i <= n; i++) {
+            factorial = factorial * i;
+        }
+        cout << "Factorial = " << factorial;
+    }
+
+    return 0;
+}
+
+
+
+#######################################
+OUTPUT
+Enter a number: 8
+Factorial = 40320
