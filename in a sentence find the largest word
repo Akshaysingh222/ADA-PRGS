@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+#include <sstream>
+// ujsed to convert streings into word(splitting words)
+using namespace std;
+
+int main() {
+    string sentence, word, longest = "";
+
+    cout << "Enter a sentence: ";
+    getline(cin, sentence);
+//getline func that reads the full line cin inside the sentence
+    stringstream ss(sentence);
+
+    while (ss >> word) {
+        if (word.length() > longest.length()) {
+            longest = word;
+        }
+    }
+
+    cout << "Longest word: " << longest << endl;
+
+    return 0;
+}
