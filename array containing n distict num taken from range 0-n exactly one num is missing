@@ -1,0 +1,21 @@
+#include <iostream>
+#include <vector>
+// used for syntax or commands like size here
+using namespace std;
+ 
+int missingNumber(vector<int>& nums) {
+    int n = nums.size();
+    int expected = n * (n + 1) / 2;
+    
+    int actual = 0;
+    for (int num : nums)
+    //  : used for each elemnt in
+    {
+        actual += num;
+    }
+    return expected - actual;
+}
+int main() {
+    vector<int> nums = {0, 3, 1};
+    cout << missingNumber(nums);  // Output: 2
+}
